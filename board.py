@@ -13,12 +13,24 @@ class Board:
         print(self.wall)
         print(self.cells.format(**row))
 
-    def draw(self):
-        for row in self.initalize:
+    def draw(self, *arg):
+        if arg:
+            rows = arg[0]
+        else:
+            rows = self.initalize
+        for row in rows:
             self.part(row)
         print(self.wall)
 
-
 board = Board()
 board.draw()
+# board takes in other list of dirs to populate
+
+new_rows = [
+    {'a': 'X', 'b': 'X', 'c': 3},
+    {'a': 4, 'b': 'O', 'c': 6},
+    {'a': 7, 'b': 8, 'c': 'O'}]
+
+board.draw(new_rows)
+        
 
