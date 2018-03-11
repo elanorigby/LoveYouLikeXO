@@ -2,31 +2,17 @@ import pdb
 from board import Board
 
 board = Board()
+
+print("Welcome to the world's premier Tick Tack Toe experience!")
 board.draw()
-# have a stab at the game play
 
-row_dict = [
-    {'a': 1, 'b': 2, 'c': 3},
-    {'a': 4, 'b': 5, 'c': 6},
-    {'a': 7, 'b': 8, 'c': 9}]
-        
-player = 'X'
+player = input("Would you like to play as X or O? ").upper()
 
+if player == 'X':
+    AI = 'O'
+elif player == 'O':
+    AI = 'X'
 
-# find number in dict list, change to letter
-def key_to_change():
-    #pdb.set_trace()
-    move = int(input("Where would you like to move? "))
-    for row in row_dict:
-        for key, val in row.items():
-            if val == move:
-                return row_dict.index(row), key
+print("player", player, "AI", AI)
 
 
-rownum, key = key_to_change()
-
-print(rownum, key)
-
-row_dict[rownum][key] = player
-print(row_dict)
-board.draw(row_dict)
