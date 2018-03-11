@@ -4,7 +4,7 @@ class Board:
     def __init__(self):
         self.wall = "+---+---+---+"
         self.cells = "| {a} | {b} | {c} |"
-        self.initalize = [
+        self.rows = [
                 {'a': 1, 'b': 2, 'c': 3},
                 {'a': 4, 'b': 5, 'c': 6},
                 {'a': 7, 'b': 8, 'c': 9}]
@@ -13,14 +13,26 @@ class Board:
         print(self.wall)
         print(self.cells.format(**row))
 
-    def draw(self, *arg):
-        if arg:
-            rows = arg[0]
-        else:
-            rows = self.initalize
-        for row in rows:
+    def edit(self, move, player):
+        for row in self.rows:
+            for key, val in row.items():
+                if val == move:
+                    idx =  self.rows.index(row) 
+                    self.rows[idx][key] = player
+
+    def draw(self, *args):
+        if args:
+            move, player = args
+            for row in self.rows:
+                for key, val in row.items():
+                    if val == move:
+                        idx =  self.rows.index(row) 
+                        self.rows[idx][key] = player
+
+        for row in self.rows:
             self.part(row)
         print(self.wall)
+
 
 if __name__=="__main__":
     board = Board()
@@ -32,6 +44,7 @@ if __name__=="__main__":
         {'a': 4, 'b': 'O', 'c': 6},
         {'a': 7, 'b': 8, 'c': 'O'}]
 
-    board.draw(new_rows)
+    board.draw(2, 'X')
+    print(board.rows)
         
 
