@@ -7,7 +7,7 @@ class Board:
 
     def part(self):
         print(self.wall)
-        print(self.cells)
+        print(self.cells.format(1,2,3))
 
     def draw(self):
         self.part()
