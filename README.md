@@ -18,13 +18,15 @@ All you can do right now is fill up the board.
 ##### Dear Scrutinizers, 
 
 The master branch is as far as I got in two hours.
+
 I realize that none of my inputs are sanitized :[
+
 My next steps would have been:
-    Alternate moves between player and AI
-    Check for winning combinations
-    Put things into classes as appropriate 
-    Get game loops looping proper (option to play again, too)
-    Sanitize inputs and other error handling
+  -  Alternate moves between player and AI
+  -  Check for winning combinations
+  -  Put things into classes as appropriate 
+  -  Get game loops looping proper (option to play again, too)
+  -  Sanitize inputs and other error handling
 
 
 I am going to continue development on the cheeky branch, because I am having
