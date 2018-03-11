@@ -3,17 +3,21 @@
 class Board:
     def __init__(self):
         self.wall = "+---+---+---+"
-        self.cells = "| {} | {} | {} |"
+        self.cells = "| {a} | {b} | {c} |"
+        self.initalize = [
+                {'a': 1, 'b': 2, 'c': 3},
+                {'a': 4, 'b': 5, 'c': 6},
+                {'a': 7, 'b': 8, 'c': 9}]
 
-    def part(self):
+    def part(self, row):
         print(self.wall)
-        print(self.cells.format(1,2,3))
+        print(self.cells.format(**row))
 
     def draw(self):
-        self.part()
-        self.part()
-        self.part()
+        for row in self.initalize:
+            self.part(row)
         print(self.wall)
+
 
 board = Board()
 board.draw()
