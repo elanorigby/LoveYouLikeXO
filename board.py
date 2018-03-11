@@ -22,15 +22,16 @@ class Board:
             self.part(row)
         print(self.wall)
 
-board = Board()
-board.draw()
-# board takes in other list of dirs to populate
+if __name__=="__main__":
+    board = Board()
+    board.draw()
+    # board takes in other list of dirs to populate
 
-new_rows = [
-    {'a': 'X', 'b': 'X', 'c': 3},
-    {'a': 4, 'b': 'O', 'c': 6},
-    {'a': 7, 'b': 8, 'c': 'O'}]
+    new_rows = [
+        {'a': 'X', 'b': 'X', 'c': 3},
+        {'a': 4, 'b': 'O', 'c': 6},
+        {'a': 7, 'b': 8, 'c': 'O'}]
 
-board.draw(new_rows)
+    board.draw(new_rows)
         
 
