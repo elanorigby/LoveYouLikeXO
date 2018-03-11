@@ -1,0 +1,52 @@
+Drawing the board
+
+components:
+simple printing of +---+ etc
+spaces that the letters go in - interpolate
+use dict and kwargs to avoid passing in gross amount of arguments
+number the rows, abc on top
+
+draw blank board,
+redraw with each move
+
+how to store moves?
+in dict that populates cells?
+
+How to keep track of winning?
+
+How to keep track of board-full?
+if dict cells all are not " "?
+count number of moves (for both players)
+total move count >= 9 game over
+
+How to run the AI player?
+1 - 9 correspond to cells
+list from which nums are removed as that space is chosen
+AI random.choice(list of remaining nums)
+
+just use 1-9 as names of cell in first place? replace num with letter? it's not
+in the spec but that's probably ok
+in this scenario, is keeping track of winning easier?
+if 123 are the same 
+if 456, 
+if 789, 
+if 147, 258, 369, 159
+keep a dict of the player in each num, check after each move? check after 3
+moves? 5 moves? then check each?
+
+Draw board with placeholder numbers that will be replaced by X or O
+X goes first? - it looks like it from the spec, and I seem to remember that
+AI chooses randomly from list 1-9 that is discounted from every move
+If this list reached 0 objects, the game is over.
+a dict of moves that have been done is stored (can this be the same one that
+populates the board?) 
+{cellnum: player} ex: {3: O}, {7: X}
+if dict[1] = dict[2] = dict[3]
+really do this for all possible combos? probably. worry about it later.
+
+
+
+
+
+
+
