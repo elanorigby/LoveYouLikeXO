@@ -20,11 +20,11 @@ class Board:
             for row in self.rows:
                 for key, val in row.items():
                     if val == move:
-                        idx =  self.rows.index(row) 
+                        idx = self.rows.index(row) 
                         self.rows[idx][key] = player
 
         for row in self.rows:
-            self.part(row)
+            self.__part(row)
         print(self.wall)
 
 
