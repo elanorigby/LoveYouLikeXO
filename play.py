@@ -2,7 +2,7 @@ import pdb
 from board import Board
 
 board = Board()
-moves = 0 
+moves = [] 
 
 print("Welcome to the world's premier Tick Tack Toe experience!")
 board.draw()
@@ -17,11 +17,14 @@ elif player == 'O':
 # print("player", player, "AI", AI)
 
 # game loop zoen
-while moves <  9:
+while len(moves) <  9:
     move = int(input("Where would you like to move? "))
-    moves += 1
-    board.draw(move, player)
-
+    if move in moves:
+        print("That spot is taken.")
+    else:
+        moves.append(move)
+        board.draw(move, player) 
+    
 print("The board is full. The game is over")
 
 
