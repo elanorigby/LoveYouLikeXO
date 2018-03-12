@@ -27,23 +27,32 @@ elif player == 'O':
 # game loop zoen
 
 def get_move(moves):
-    move = int(input("Where would you like to move? "))
-    if  move > 9 or move < 1:
+    try:
+        move = int(input("Where would you like to move? "))
+        if  move > 9 or move < 1:
+            print("That spot doesn't exist")
+            get_move(moves)
+
+        if move in moves:
+            print("That spot is taken.")
+            get_move(moves)
+        
+        moves.append(move)
+        return move
+
+    except ValueError:
         print("That spot doesn't exist")
         get_move(moves)
-    if move in moves:
-        print("That spot is taken.")
-        get_move(moves)
-    else:
-        moves.append(move)
-        board.draw(move, player) 
+
     
     
 
 moves = [] 
 
 while len(moves) <  9:
-    get_move(moves)
+    move = get_move(moves)
+    board.draw(move, player)
+
     
 print("The board is full. The game is over")
 
