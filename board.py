@@ -9,7 +9,7 @@ class Board:
                 {'a': 4, 'b': 5, 'c': 6},
                 {'a': 7, 'b': 8, 'c': 9}]
 
-    def part(self, row):
+    def __part(self, row):
         print(self.wall)
         print(self.cells.format(**row))
 
