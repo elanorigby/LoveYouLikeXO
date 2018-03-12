@@ -13,12 +13,6 @@ class Board:
         print(self.wall)
         print(self.cells.format(**row))
 
-    def edit(self, move, player):
-        for row in self.rows:
-            for key, val in row.items():
-                if val == move:
-                    idx =  self.rows.index(row) 
-                    self.rows[idx][key] = player
 
     def draw(self, *args):
         if args:
@@ -37,13 +31,6 @@ class Board:
 if __name__=="__main__":
     board = Board()
     board.draw()
-    # board takes in other list of dirs to populate
-
-    new_rows = [
-        {'a': 'X', 'b': 'X', 'c': 3},
-        {'a': 4, 'b': 'O', 'c': 6},
-        {'a': 7, 'b': 8, 'c': 'O'}]
-
     board.draw(2, 'X')
     print(board.rows)
         
