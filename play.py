@@ -6,6 +6,7 @@ board = Board()
 print("Welcome to the world's premier Tick Tack Toe experience!")
 board.draw()
 
+# adjust for enter key
 def get_player():
     player = input("Would you like to play as X or O? ").upper()
     if player not in "XO":
@@ -27,6 +28,9 @@ elif player == 'O':
 
 def get_move(moves):
     move = int(input("Where would you like to move? "))
+    if  move > 9 or move < 1:
+        print("That spot doesn't exist")
+        get_move(moves)
     if move in moves:
         print("That spot is taken.")
         get_move(moves)
