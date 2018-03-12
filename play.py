@@ -1,10 +1,6 @@
 import pdb 
 from board import Board
 
-board = Board()
-
-print("Welcome to the world's premier Tick Tack Toe experience!")
-board.draw()
 
 # adjust for enter key
 def get_player():
@@ -15,16 +11,11 @@ def get_player():
     else:
         return player
 
-player = get_player()
+#if player == 'X':
+#    AI = 'O'
+#elif player == 'O':
+#    AI = 'X'
 
-if player == 'X':
-    AI = 'O'
-elif player == 'O':
-    AI = 'X'
-
-# print("player", player, "AI", AI)
-
-# game loop zoen
 
 def get_move(moves):
     try:
@@ -45,15 +36,22 @@ def get_move(moves):
         get_move(moves)
 
     
-    
+if __name__ == "__main__":    
 
-moves = [] 
+    board = Board()
 
-while len(moves) <  9:
-    move = get_move(moves)
-    board.draw(move, player)
+    print("Welcome to the world's premier Tick Tack Toe experience!")
 
-    
-print("The board is full. The game is over")
+    board.draw()
 
+    player = get_player()
+
+    moves = [] 
+
+    while len(moves) <  9:
+        move = get_move(moves)
+        board.draw(move, player)
+
+        
+    print("The board is full. The game is over")
 
