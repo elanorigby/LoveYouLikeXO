@@ -20,10 +20,15 @@ class Board:
                     self.rows[idx][key] = player
 
     def check(self):
-        for row in self.rows:
+        for idx, row in enumerate(self.rows):
             if all(val == row['a'] for val in row.values()):
                 print("You won horizontally")
+
+        for char in 'abc':
+            if self.rows[0][char] == self.rows[1][char] == self.rows[2][char]:
+                print("You won vertically")
             
+
     def draw(self, *args):
         if args:
             move, player = args
