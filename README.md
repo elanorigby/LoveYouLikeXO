@@ -17,7 +17,7 @@ A terminal tick-tack-toe game for the hopelessly erudite.
 
 #### Next steps: 
   -  Alternate moves between player and AI
-  -  Check for winning combinations
+  -  Check for winning combinations [X]
   -  Put things into classes as appropriate 
   -  Get game loops looping proper (option to play again, too)
   -  Sanitize inputs and other error handling
