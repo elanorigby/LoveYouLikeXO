@@ -14,12 +14,10 @@ class Board:
         print(self.cells.format(**row))
 
     def _edit(self, move, player):
-        for row in self.rows:
+        for idx, row in enumerate(self.rows):
             for key, val in row.items():
                 if val == move:
-                    idx = self.rows.index(row) 
                     self.rows[idx][key] = player
-
 
     def draw(self, *args):
         if args:
