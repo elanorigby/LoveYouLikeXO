@@ -20,7 +20,7 @@ class Board:
                     self.rows[idx][key] = player
 
     def check(self):
-        for idx, row in enumerate(self.rows):
+        for row in self.rows:
             if all(val == row['a'] for val in row.values()):
                 print("You won horizontally")
 
