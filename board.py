@@ -27,6 +27,10 @@ class Board:
         for char in 'abc':
             if self.rows[0][char] == self.rows[1][char] == self.rows[2][char]:
                 print("You won vertically")
+
+        if self.rows[0]['a'] == self.rows[1]['b'] == self.rows[2]['c']:
+            print("You won like this: \\")
+
             
 
     def draw(self, *args):
