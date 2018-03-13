@@ -37,7 +37,6 @@ def get_move(moves):
 
     
 if __name__ == "__main__":    
-
     board = Board()
     print("Welcome to the world's premier Tick Tack Toe experience!")
     board.draw()
@@ -49,6 +48,7 @@ if __name__ == "__main__":
     while len(moves) <  9:
         move = get_move(moves)
         board.draw(move, player)
+        board.check()
         
     print("The board is full. The game is over")
 

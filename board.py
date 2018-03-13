@@ -19,6 +19,11 @@ class Board:
                 if val == move:
                     self.rows[idx][key] = player
 
+    def check(self):
+        for row in self.rows:
+            if all(val == row['a'] for val in row.values()):
+                print("You won horizontally")
+            
     def draw(self, *args):
         if args:
             move, player = args
