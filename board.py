@@ -9,7 +9,7 @@ class Board:
                 {'a': 4, 'b': 5, 'c': 6},
                 {'a': 7, 'b': 8, 'c': 9}]
 
-    def __part(self, row):
+    def _part(self, row):
         print(self.wall)
         print(self.cells.format(**row))
 
@@ -24,7 +24,7 @@ class Board:
                         self.rows[idx][key] = player
 
         for row in self.rows:
-            self.__part(row)
+            self._part(row)
         print(self.wall)
 
 
