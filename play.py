@@ -10,11 +10,11 @@ def get_player():
         get_player()
     else:
         return player
+    
 
-#if player == 'X':
-#    AI = 'O'
-#elif player == 'O':
-#    AI = 'X'
+def get_ai(player):
+    if player == 'X': return 'O'
+    elif player == 'O': return 'X'
 
 
 def get_move(moves):
@@ -39,19 +39,16 @@ def get_move(moves):
 if __name__ == "__main__":    
 
     board = Board()
-
     print("Welcome to the world's premier Tick Tack Toe experience!")
-
     board.draw()
-
     player = get_player()
+    ai = get_ai(player) 
+    print('AI: ', ai)
 
     moves = [] 
-
     while len(moves) <  9:
         move = get_move(moves)
         board.draw(move, player)
-
         
     print("The board is full. The game is over")
 
