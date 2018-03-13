@@ -31,6 +31,9 @@ class Board:
         if self.rows[0]['a'] == self.rows[1]['b'] == self.rows[2]['c']:
             print("You won like this: \\")
 
+        if self.rows[0]['c'] == self.rows[1]['b'] == self.rows[2]['a']:
+            print("You won like this: /")
+
             
 
     def draw(self, *args):
