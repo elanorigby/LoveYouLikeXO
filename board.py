@@ -20,21 +20,21 @@ class Board:
                     self.rows[idx][key] = player
 
     def check(self):
+        # horizontal combos
         for row in self.rows:
             if all(val == row['a'] for val in row.values()):
-                print("You won horizontally")
+                return row['a']
 
+        # vertical combos
         for char in 'abc':
             if self.rows[0][char] == self.rows[1][char] == self.rows[2][char]:
-                print("You won vertically")
+                return self.rows[0][char]
 
-        if self.rows[0]['a'] == self.rows[1]['b'] == self.rows[2]['c']:
-            print("You won like this: \\")
-
-        if self.rows[0]['c'] == self.rows[1]['b'] == self.rows[2]['a']:
-            print("You won like this: /")
-
-            
+        # diagonal combos \ & /
+        if (self.rows[0]['a'] == self.rows[1]['b'] == self.rows[2]['c']) or (self.rows[0]['c'] == self.rows[1]['b'] == self.rows[2]['a']):
+                return self.rows[1]['b']
+        else:
+            return None
 
     def draw(self, *args):
         if args:

@@ -48,7 +48,9 @@ if __name__ == "__main__":
     while len(moves) <  9:
         move = get_move(moves)
         board.draw(move, player)
-        board.check()
+        winner = board.check()
+        if winner: 
+            print ("{} won!".format(winner))
         
     print("The board is full. The game is over")
 
